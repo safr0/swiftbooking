@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4>{{pageTitle}}</h4>        
+     </div> 
+    <bm-addbooking></bm-addbooking>
+
+    <div class="panel panel-default">
+        
+        <div class="panel-heading">
+            <h4>Booking List</h4>
+        </div> 
+
+        <div class="table-responsive">
+            <table class="table" *ngIf='bookings && bookings.length'>
+                <thead>
+                    <tr>
+                        <td>BOOK WITH GETSWIFT</td>
+                        <td>Name</td>
+                        <td>Phone#</td>
+                        <td>Address</td>
+                        <td>Pickup Address</td>
+                    </tr>
+                </thead>
+                <tbody *ngFor='let booking of bookings'>
+                    <tr>
+                        <td><div (click)='swiftDelivery(booking)' class="btn btn-primary">Swift Delivery</div></td>
+                        <td>{{booking.Name}}</td>
+                        <td>{{booking.Phone}}</td>
+                        <td>{{booking.Address}}</td>
+                        <td>{{booking.PickupAddress}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+    <!--todo beautify-->
+    <div *ngIf="deliveryResult">
+        <span>{{deliveryResult}}</span>
+    </div>           
+</div>

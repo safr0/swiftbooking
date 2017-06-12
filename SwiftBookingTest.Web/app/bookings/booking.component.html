@@ -1,0 +1,46 @@
+<div class='panel panel-primary'>
+    <div class='panel-body'>
+        <form novalidate (ngSubmit)="onsubmit(bookingForm)" [formGroup]="bookingForm">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label> Name</label>
+                            <input type="text" class="form-control" placeholder="Full name" maxlength="50" formControlName="Name" required />
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label> Phone</label>
+                            <input type="tel" class="form-control" placeholder="Phone number" formControlName="Phone" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label> Address </label>
+                            <input type="text" class="form-control" placeholder="Drop off address" formControlName="Address" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6" >
+                            <label> Pickup address</label>
+                            <input type="text" class="form-control" placeholder="Pick up address" formControlName="PickupAddress" />
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6" style="margin-top: 10px;">
+                            <button class="btn btn-success" (click)="saveBooking(bookingForm)">Add Booking</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <span style="color: red; font-size: small" *ngIf="errorMessage">{{errorMessage}}</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
